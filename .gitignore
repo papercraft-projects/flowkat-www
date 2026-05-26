@@ -1,0 +1,15 @@
+# macOS 시스템 숨김 파일 차단
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows 시스템 숨김 파일 차단
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code 설정 폴더 차단 (개인 설정 꼬임 방지)
+.vscode/
+
+# 나중에 자바스크립트 라이브러리를 쓰게 된다면 필수 차단
+node_modules/
