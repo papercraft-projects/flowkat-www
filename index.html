@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
     <title>FlowKat - 트랜잭션 잡는 미어캣</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FlowKat - 트랜잭션 잡는 미어캣">
+    <meta property="og:description" content="모니터링의 시작과 끝. 서비스 성능 관리 전문가 플로우캣">
+    <meta property="og:image" content="https://www.flowkat.dev/images/og_thumbnail.png"> <meta property="og:url" content="https://www.flowkat.dev">
+
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -22,33 +30,33 @@
 
     <header class="site-header">
         <div class="header-wrapper container">
-        <div class="logo">
-            <a href="/" style="display: flex; align-items: center;">
-                <div class="logo-split">
-                    <img src="images/logo_flo_face.svg" alt="미어캣" class="logo-icon">
-                    <img src="images/logo_word.svg" alt="FlowKat" class="logo-text">
-                </div>
-            </a>
-        </div>
-            
-        <button type="button" class="btn-hamburger" aria-label="모바일 메뉴 열기">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+            <div class="logo">
+                <a href="/">
+                    <div class="logo-split">
+                        <img src="images/logo_flo_face.svg" alt="미어캣 로고 아이콘" class="logo-icon">
+                        <img src="images/logo_word.svg" alt="FlowKat" class="logo-text">
+                    </div>
+                </a>
+            </div>
+                
+            <button type="button" class="btn-hamburger" aria-label="모바일 메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
             <nav class="gnb">
-                <a href="https://edu.flowkat.dev">
-                    EDU(매뉴얼) 
-                    <img src="images/icon_arrow.svg" alt="" class="icon-arrow">
+                <a href="#" data-link="edu">
+                        EDU(매뉴얼) 
+                    <img src="images/icon_arrow.svg" alt="" class="icon-arrow" aria-hidden="true">
                 </a>
-                <a href="https://digitalmall.g2b.go.kr/link/GDSF001_01/?ctrtItemMngNo=R26TA01405587000000001">
+                <a href="#" data-link="g2b">
                     조달청 디지털서비스몰 
-                    <img src="images/icon_arrow.svg" alt="" class="icon-arrow">
+                    <img src="images/icon_arrow.svg" alt="" class="icon-arrow" aria-hidden="true">
                 </a>
-                <a href="images/flowkat_brochure.pdf" download="플로우캣_소개자료.pdf">
+                <a href="#" data-link="brochure" download="플로우캣_소개자료.pdf">
                     소개자료 
-                    <img src="images/icon_arrow.svg" alt="" class="icon-arrow">
+                    <img src="images/icon_arrow.svg" alt="" class="icon-arrow" aria-hidden="true">
                 </a>
             </nav>
         </div>
@@ -57,20 +65,19 @@
     <main>
         <section class="section-hero">
             <div class="hero-wrapper container">
-                
-                <img src="images/wave_01.svg" alt="" class="deco-wave wave-1">
-                <img src="images/wave_02.svg" alt="" class="deco-wave wave-2">
-                <img src="images/wave_01.svg" alt="" class="deco-wave wave-3">
+                <img src="images/wave_01.svg" alt="" class="deco-wave wave-1" aria-hidden="true">
+                <img src="images/wave_02.svg" alt="" class="deco-wave wave-2" aria-hidden="true">
+                <img src="images/wave_01.svg" alt="" class="deco-wave wave-3" aria-hidden="true">
 
                 <div class="hero-title-part">
                     <h2 class="hero-title">트랜잭션 잡는 미어캣</h2>
-                    <img src="images/logo_wordmark.svg" alt="FlowKat" class="hero-word-logo">
+                    <img src="images/logo_wordmark.svg" alt="FlowKat 워드마크" class="hero-word-logo">
                     <p class="hero-subtitle">모니터링의 시작과 끝. 서비스 성능 관리 전문가 플로우캣</p>
                     
-                    <a href="#" class="btn-action size-md">
+                    <a href="#" data-link="demo" class="btn-action size-md">
                         <span class="btn-text">데모 바로가기</span>
                         <span class="btn-circle">
-                            <svg class="icon-arrow-line" width="40" height="19"><use href="#icon-arrow-line"></use></svg>
+                            <svg class="icon-arrow-line" width="40" height="19" aria-hidden="true"><use href="#icon-arrow-line"></use></svg>
                         </span>
                     </a>
                 </div>
@@ -78,16 +85,16 @@
                 <div class="hero-display-area">
                     <div class="dashboard-window">
                         <div class="dashboard-frame-header">
-                            <div class="frame-close-btn">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button type="button" class="frame-close-btn" aria-label="창 닫기">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                     <path d="M2 2L14 14M14 2L2 14" stroke="#010203" stroke-width="1.5" stroke-linecap="round"/>
                                 </svg>
-                            </div>
+                            </button>
                         </div>
-                        <img src="images/dashboard_main.gif" alt="플로우캣 대시보드 시연" class="dashboard-gif">
+                        <img src="images/dashboard_main.gif" alt="플로우캣 대시보드 실시간 시연 화면" class="dashboard-gif">
                     </div>
                     
-                    <img src="images/meerkat_flag.svg" alt="깃발 든 미어캣" class="char-meerkat-flag">
+                    <img src="images/meerkat_flag.svg" alt="깃발을 들고 있는 플로우캣 미어캣 캐릭터" class="char-meerkat-flag">
                 </div>
             </div>
         </section>
@@ -102,29 +109,29 @@
                 <div class="story-formula-container">
                     <div class="formula-card">
                         <div class="graphic-flow-wave">
-                            <img src="images/flow_wave_graphic.svg" alt="데이터 흐름 그래픽">
+                            <img src="images/flow_wave_graphic.svg" alt="데이터 흐름 시각화 그래픽">
                         </div>
-                        <p class="formula-text">데이터 흐름 </br> <strong class="highlight-text">Flow</strong></p>
+                        <p class="formula-text">데이터 흐름 <br> <strong class="highlight-text">Flow</strong></p>
                     </div>
 
                     <div class="formula-operator">
-                        <span class="text-mark">+</span>
+                        <span class="text-mark" aria-hidden="true">+</span>
                     </div>
 
                     <div class="formula-card">
                         <div class="graphic-meerkat-face">
-                            <img src="images/icon_meerkat_face.svg" alt="미어캣 캐릭터" class="icon-meerkat-face">
+                            <img src="images/icon_meerkat_face.svg" alt="미어캣 캐릭터 얼굴 아이콘" class="icon-meerkat-face">
                         </div>
-                        <p class="formula-text">모니터링의 생활화 </br> <strong class="highlight-text">Meerkat</strong></p>
+                        <p class="formula-text">모니터링의 생활화 <br> <strong class="highlight-text">Meerkat</strong></p>
                     </div>
 
                     <div class="formula-operator">
-                            <span class="text-mark">=</span>
+                        <span class="text-mark" aria-hidden="true">=</span>
                     </div>
 
                     <div class="formula-card card-result">
                         <div class="graphic-combined-logo">
-                            <img src="images/logo_combined_visual.svg" alt="FlowKat Combined Logo">
+                            <img src="images/logo_combined_visual.svg" alt="FlowKat 결합 브랜드 로고 비주얼">
                         </div>
                     </div>
                 </div>
@@ -141,13 +148,16 @@
                 <div class="portal-search-trigger-box">
                     <div class="portal-search-header">
                         <div class="g2b-logo">
-                            <img src="images/g2bdigitalmall.svg" alt="조달청 디지털서비스몰">
+                            <img src="images/g2bdigitalmall.svg" alt="조달청 디지털서비스몰 로고">
                         </div>
 
                         <div class="portal-search-mockup">
-                            <span class="mockup-label">플로우캣</span>
+                            <div class="typing-wrapper">
+                                <span class="mockup-label js-typing-text"></span>
+                                <span class="typing-cursor"></span>
+                            </div>
                             <div class="mockup-input-group">
-                                <img src="images/icon_search.svg" alt="검색" class="icon-search">
+                                <img src="images/icon_search.svg" alt="검색 아이콘" class="icon-search" aria-hidden="true">
                             </div>
                         </div>
                     </div>
@@ -156,7 +166,7 @@
                         <div class="dropdown-inner-content">
                             
                             <div class="product-visual-side">
-                                <img src="images/product_box.png" alt="FlowKat 정품 패키지 상품 박스" class="img-product-box">
+                                <img src="images/product_box.png" alt="FlowKat 정품 패키지 상품 박스 이미지" class="img-product-box">
                             </div>
 
                             <div class="product-info-spec-side">
@@ -184,10 +194,10 @@
                     </div> 
                 </div> 
                 
-                <a href="https://digitalmall.g2b.go.kr/link/GDSF001_01/?ctrtItemMngNo=R26TA01405587000000001" class="btn-action size-lg mod-outline-orange">
+                <a href="#" data-link="g2b" class="btn-action size-lg mod-outline-orange">
                     <span class="btn-text">조달청 디지털서비스몰 방문하기</span>
                     <span class="btn-circle">
-                        <svg class="icon-arrow-line" width="40" height="19"><use href="#icon-arrow-line"></use></svg>
+                        <svg class="icon-arrow-line" width="40" height="19" aria-hidden="true"><use href="#icon-arrow-line"></use></svg>
                     </span>
                 </a>
 
@@ -207,37 +217,13 @@
                         <img src="images/logo_mofe.svg" alt="재정경제부">
                         <img src="images/logo_mpb.svg" alt="기획예산처">
                         <img src="images/logo_dcco.svg" alt="대전도시공사">
-                        <img src="images/logo_pro.svg" alt="영상대">
+                        <img src="images/logo_pro.svg" alt="영산대학교">
                         <img src="images/logo_gyeongnam.svg" alt="경상남도">
                         <img src="images/logo_koelsa.svg" alt="한국승강기안전공단">
                     </div>
 
-                    <div class="testimonial-grid">
-                        <div class="review-card">
-                            <span class="card-badge">담당자 A</span>
-                            <p class="card-body">저렴한 도입 비용으로 많은 서버를 관제할 수 있었습니다. OS 상태까지 모니터링 되어 편리합니다.</p>
+                    <div class="testimonial-grid" id="testimonial-grid">
                         </div>
-                        <div class="review-card">
-                            <span class="card-badge">담당자 B</span>
-                            <p class="card-body">기관 분리 때 URL 기준의 모니터링으로 미처 보지 못한 서비스를 파악하기 쉬웠습니다.</p>
-                        </div>
-                        <div class="review-card">
-                            <span class="card-badge">개발자 A</span>
-                            <p class="card-body">사용자 친화적인 대시보드와 담당자에 따라 설정할 수 있는 권한 기능들 주력으로 사용 중입니다.</p>
-                        </div>
-                        <div class="review-card">
-                            <span class="card-badge">개발자 B</span>
-                            <p class="card-body">매주 5초 이상 지연되던 쿼리를 개선하여 고객 만족도 조사에서 좋은 점수를 받았습니다.</p>
-                        </div>
-                        <div class="review-card">
-                            <span class="card-badge">개발자 C</span>
-                            <p class="card-body">크롤링 패턴을 실시간 감지하여 파트너에 노출되는 기능을 긴급 적용하여 대응했었네요.</p>
-                        </div>
-                        <div class="review-card">
-                            <span class="card-badge">운영자 A</span>
-                            <p class="card-body">학사정보시스템 공동코드의 변경 사항이 적용되지 않는 문제를 플로우캣과 함께 해결했습니다.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -251,87 +237,87 @@
                 </div>
 
                 <div class="main-features-container">
-<div class="features-sidebar-black">
-    
-    <div class="btn-variant-card mod-black active" id="tab-service-flow" data-img-dark="images/dashboard_dark.svg" data-img-light="images/dashboard_light.svg">
-        <div class="variant-header">
-            <div class="circle-icon-box">
-                <svg class="icon-inner icon-plus"><use href="#icon-plus"></use></svg>
-                <img src="images/icon_eye_white.svg" alt="👁" class="icon-inner icon-custom">
-            </div>
-            <span class="variant-title">한눈에 펼쳐지는 서비스의 흐름</span>
-        </div>
-        <div class="variant-body">
-            <p class="variant-desc">운영 중인 서비스의 전체 흐름을 WAS 중심으로 시각화하고, SW 기준의 구성도를 작성합니다.</p>
-            <div class="variant-footer">
-                <button type="button" class="mode-sub-btn icon-daytime" data-mode="light" title="라이트 모드 보기">
-                    <img src="images/icon_sun.svg" alt="해">
-                </button>
-                <button type="button" class="mode-sub-btn icon-nighttime active" data-mode="dark" title="다크 모드 보기">
-                    <img src="images/icon_moon.svg" alt="달">
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="mobile-feature-img-box active"><img src="images/dashboard_dark.svg" alt="기능 뷰"></div>
+                    <div class="features-sidebar-black">
+                        
+                        <div class="btn-variant-card mod-black active" id="tab-service-flow" data-img-dark="images/dashboard_dark.svg" data-img-light="images/dashboard_light.svg">
+                            <div class="variant-header">
+                                <div class="circle-icon-box">
+                                    <svg class="icon-inner icon-plus" aria-hidden="true"><use href="#icon-plus"></use></svg>
+                                    <img src="images/icon_eye_white.svg" alt="눈 아이콘" class="icon-inner icon-custom">
+                                </div>
+                                <span class="variant-title">한눈에 펼쳐지는 서비스의 흐름</span>
+                            </div>
+                            <div class="variant-body">
+                                <p class="variant-desc">운영 중인 서비스의 전체 흐름을 WAS 중심으로 시각화하고, SW 기준의 구성도를 작성합니다.</p>
+                                <div class="variant-footer">
+                                    <button type="button" class="mode-sub-btn icon-daytime" data-mode="light" title="라이트 모드 보기">
+                                        <img src="images/icon_sun.svg" alt="라이트 모드">
+                                    </button>
+                                    <button type="button" class="mode-sub-btn icon-nighttime active" data-mode="dark" title="다크 모드 보기">
+                                        <img src="images/icon_moon.svg" alt="다크 모드">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-feature-img-box active"><img src="images/dashboard_dark.svg" alt="서비스 흐름 대시보드 화면"></div>
 
-    <div class="btn-variant-card mod-black" data-img="images/dashboard_panorama.svg">
-        <div class="variant-header">
-            <div class="circle-icon-box">
-                <svg class="icon-inner icon-plus"><use href="#icon-plus"></use></svg>
-                <img src="images/icon_panorama_white.svg" alt="★" class="icon-inner icon-custom">
-            </div>
-            <span class="variant-title">파노라마뷰</span>
-        </div>
-        <div class="variant-body">
-            <p class="variant-desc">서비스 가동률을 벌집 구조로 펼쳐 서비스 상태, 가동률, 이벤트 로그 등과 함께 다각도로 분석합니다.</p>
-        </div>
-    </div>
-    <div class="mobile-feature-img-box"><img src="images/dashboard_panorama.svg" alt="파노라마뷰"></div>
+                        <div class="btn-variant-card mod-black" data-img="images/dashboard_panorama.svg">
+                            <div class="variant-header">
+                                <div class="circle-icon-box">
+                                    <svg class="icon-inner icon-plus" aria-hidden="true"><use href="#icon-plus"></use></svg>
+                                    <img src="images/icon_panorama_white.svg" alt="파노라마 아이콘" class="icon-inner icon-custom">
+                                </div>
+                                <span class="variant-title">파노라마뷰</span>
+                            </div>
+                            <div class="variant-body">
+                                <p class="variant-desc">서비스 가동률을 벌집 구조로 펼쳐 서비스 상태, 가동률, 이벤트 로그 등과 함께 다각도로 분석합니다.</p>
+                            </div>
+                        </div>
+                        <div class="mobile-feature-img-box"><img src="images/dashboard_panorama.svg" alt="파노라마뷰 대시보드 화면"></div>
 
-    <div class="btn-variant-card mod-black" data-img="images/dashboard_xlog.png">
-        <div class="variant-header">
-            <div class="circle-icon-box">
-                <svg class="icon-inner icon-plus"><use href="#icon-plus"></use></svg>
-                <img src="images/icon_xlog_white.svg" alt="🔲" class="icon-inner icon-custom">
-            </div>
-            <span class="variant-title">XLOG</span>
-        </div>
-        <div class="variant-body">
-            <p class="variant-desc">사용자의 요청이 서버에 도착하여 응답을 보내기까지의 모든 과정을 스캐터 차트로 구현하고 다양한 분석 포인트를 확인합니다.</p>
-        </div>
-    </div>
-    <div class="mobile-feature-img-box"><img src="images/dashboard_xlog.png" alt="XLOG뷰"></div>
+                        <div class="btn-variant-card mod-black" data-img="images/dashboard_xlog.png">
+                            <div class="variant-header">
+                                <div class="circle-icon-box">
+                                    <svg class="icon-inner icon-plus" aria-hidden="true"><use href="#icon-plus"></use></svg>
+                                    <img src="images/icon_xlog_white.svg" alt="XLOG 아이콘" class="icon-inner icon-custom">
+                                </div>
+                                <span class="variant-title">XLOG</span>
+                            </div>
+                            <div class="variant-body">
+                                <p class="variant-desc">사용자의 요청이 서버에 도착하여 응답을 보내기까지의 모든 과정을 스캐터 차트로 구현하고 다양한 분석 포인트를 확인합니다.</p>
+                            </div>
+                        </div>
+                        <div class="mobile-feature-img-box"><img src="images/dashboard_xlog.png" alt="XLOG 스캐터 차트 화면"></div>
 
-    <div class="btn-variant-card mod-black" data-img="images/dashboard_issue.svg">
-        <div class="variant-header">
-            <div class="circle-icon-box">
-                <svg class="icon-inner icon-plus"><use href="#icon-plus"></use></svg>
-                <img src="images/icon_report_white.svg" alt="📋" class="icon-inner icon-custom">
-            </div>
-            <span class="variant-title">모니터링과 보고서를 한번에</span>
-        </div>
-        <div class="variant-body">
-            <p class="variant-desc">모니터링 중 발견된 문제점을 기록하고 추적할 수 있는 기능으로 고객, 운영자, 엔지니어 모두가 활용할 수 있는 데이터를 제공합니다.</p>
-        </div>
-    </div>
-    <div class="mobile-feature-img-box"><img src="images/dashboard_issue.svg" alt="이슈뷰"></div>
+                        <div class="btn-variant-card mod-black" data-img="images/dashboard_issue.svg">
+                            <div class="variant-header">
+                                <div class="circle-icon-box">
+                                    <svg class="icon-inner icon-plus" aria-hidden="true"><use href="#icon-plus"></use></svg>
+                                    <img src="images/icon_report_white.svg" alt="보고서 아이콘" class="icon-inner icon-custom">
+                                </div>
+                                <span class="variant-title">모니터링과 보고서를 한번에</span>
+                            </div>
+                            <div class="variant-body">
+                                <p class="variant-desc">모니터링 중 발견된 문제점을 기록하고 추적할 수 있는 기능으로 고객, 운영자, 엔지니어 모두가 활용할 수 있는 데이터를 제공합니다.</p>
+                            </div>
+                        </div>
+                        <div class="mobile-feature-img-box"><img src="images/dashboard_issue.svg" alt="이슈 및 보고서 관리 화면"></div>
 
-    <div class="btn-variant-card mod-black" data-img="images/dashboard_custom.svg">
-        <div class="variant-header">
-            <div class="circle-icon-box">
-                <svg class="icon-inner icon-plus"><use href="#icon-plus"></use></svg>
-                <img src="images/icon_custom_white.svg" alt="⚙" class="icon-inner icon-custom">
-            </div>
-            <span class="variant-title">사용자 맞춤 대시보드</span>
-        </div>
-        <div class="variant-body">
-            <p class="variant-desc">제공된 템플릿을 활용하거나 사용자가 직접 차트를 선택하여 맞춤형 대시보드를 만들 수 있습니다.</p>
-        </div>
-    </div>
-    <div class="mobile-feature-img-box"><img src="images/dashboard_custom.svg" alt="커스텀 대시보드"></div>
+                        <div class="btn-variant-card mod-black" data-img="images/dashboard_custom.svg">
+                            <div class="variant-header">
+                                <div class="circle-icon-box">
+                                    <svg class="icon-inner icon-plus" aria-hidden="true"><use href="#icon-plus"></use></svg>
+                                    <img src="images/icon_custom_white.svg" alt="설정 아이콘" class="icon-inner icon-custom">
+                                </div>
+                                <span class="variant-title">사용자 맞춤 대시보드</span>
+                            </div>
+                            <div class="variant-body">
+                                <p class="variant-desc">제공된 템플릿을 활용하거나 사용자가 직접 차트를 선택하여 맞춤형 대시보드를 만들 수 있습니다.</p>
+                            </div>
+                        </div>
+                        <div class="mobile-feature-img-box"><img src="images/dashboard_custom.svg" alt="사용자 정의 커스텀 대시보드 화면"></div>
 
-</div>
+                    </div>
                     <div class="features-display-box">
                         <img id="feature-main-screen" src="images/dashboard_dark.svg" alt="대시보드 실시간 관제 화면">
                     </div>
@@ -342,8 +328,8 @@
                         <div class="btn-variant-card mod-gray active" data-index="0">
                             <div class="variant-header">
                                 <div class="circle-icon-box">
-                                    <svg class="icon-inner icon-plus"><use href="#icon-plus"></use></svg>
-                                    <img src="images/icon_tree_black.svg" alt="구성도" class="icon-inner icon-custom">
+                                    <svg class="icon-inner icon-plus" aria-hidden="true"><use href="#icon-plus"></use></svg>
+                                    <img src="images/icon_tree_black.svg" alt="구성도 아이콘" class="icon-inner icon-custom">
                                 </div>
                                 <span class="variant-title">구성도</span>
                             </div>
@@ -354,8 +340,8 @@
                         <div class="btn-variant-card mod-gray" data-index="1">
                             <div class="variant-header">
                                 <div class="circle-icon-box">
-                                    <svg class="icon-inner icon-plus"><use href="#icon-plus"></use></svg>
-                                    <img src="images/icon_bell_black.svg" alt="알람" class="icon-inner icon-custom">
+                                    <svg class="icon-inner icon-plus" aria-hidden="true"><use href="#icon-plus"></use></svg>
+                                    <img src="images/icon_bell_black.svg" alt="알람 아이콘" class="icon-inner icon-custom">
                                 </div>
                                 <span class="variant-title">알람</span>
                             </div>
@@ -366,8 +352,8 @@
                         <div class="btn-variant-card mod-gray" data-index="2">
                             <div class="variant-header">
                                 <div class="circle-icon-box">
-                                    <svg class="icon-inner icon-plus"><use href="#icon-plus"></use></svg>
-                                    <img src="images/icon_bot_black.svg" alt="챗봇" class="icon-inner icon-custom">
+                                    <svg class="icon-inner icon-plus" aria-hidden="true"><use href="#icon-plus"></use></svg>
+                                    <img src="images/icon_bot_black.svg" alt="챗봇 아이콘" class="icon-inner icon-custom">
                                 </div>
                                 <span class="variant-title">챗봇 Flo</span>
                             </div>
@@ -378,8 +364,8 @@
                         <div class="btn-variant-card mod-gray" data-index="3">
                             <div class="variant-header">
                                 <div class="circle-icon-box">
-                                    <svg class="icon-inner icon-plus"><use href="#icon-plus"></use></svg>
-                                    <img src="images/icon_telemetry_black.svg" alt="오픈텔레메트리" class="icon-inner icon-custom">
+                                    <svg class="icon-inner icon-plus" aria-hidden="true"><use href="#icon-plus"></use></svg>
+                                    <img src="images/icon_telemetry_black.svg" alt="오픈텔레메트리 아이콘" class="icon-inner icon-custom">
                                 </div>
                                 <span class="variant-title">OpenTelemetry</span>
                             </div>
@@ -390,8 +376,8 @@
                         <div class="btn-variant-card mod-gray" data-index="4">
                             <div class="variant-header">
                                 <div class="circle-icon-box">
-                                    <svg class="icon-inner icon-plus"><use href="#icon-plus"></use></svg>
-                                    <img src="images/icon_zabbix_black.svg" alt="자빅스" class="icon-inner icon-custom">
+                                    <svg class="icon-inner icon-plus" aria-hidden="true"><use href="#icon-plus"></use></svg>
+                                    <img src="images/icon_zabbix_black.svg" alt="자빅스 아이콘" class="icon-inner icon-custom">
                                 </div>
                                 <span class="variant-title">zabbix</span>
                             </div>
@@ -402,11 +388,11 @@
                     </div>
 
                     <div class="architecture-cards-panel">
-                        <div class="arch-infographic-card active"><img src="images/infographic_01.svg" alt="구성도 그래픽"></div>
-                        <div class="arch-infographic-card"><img src="images/infographic_02.svg" alt="알람 연동망"></div>
-                        <div class="arch-infographic-card"><img src="images/infographic_03.svg" alt="챗봇 UI 프레임"></div>
-                        <div class="arch-infographic-card"><img src="images/infographic_04.svg" alt="메트릭스 구조"></div>
-                        <div class="arch-infographic-card"><img src="images/infographic_05.svg" alt="자빅스 연동도"></div>
+                        <div class="arch-infographic-card active"><img src="images/infographic_01.svg" alt="서비스 인포그래픽 토폴로지 구성도"></div>
+                        <div class="arch-infographic-card"><img src="images/infographic_02.svg" alt="알람 메시지 연동 아키텍처"></div>
+                        <div class="arch-infographic-card"><img src="images/infographic_03.svg" alt="AI 전문가 Flo 챗봇 UI 프레임워크"></div>
+                        <div class="arch-infographic-card"><img src="images/infographic_04.svg" alt="오픈텔레메트리 메트릭스 구조도"></div>
+                        <div class="arch-infographic-card"><img src="images/infographic_05.svg" alt="Zabbix 시스템 통합 연동망 구성도"></div>
                     </div>
                 </div>
 
@@ -422,9 +408,9 @@
                 </div>
 
                 <div class="cta-image-row">
-                    <img src="images/one_flo.svg" alt="플로우캣 미어캣 캐릭터 일러스트">
-                    <img src="images/two_flo.svg" alt="플로우캣 미어캣 캐릭터 일러스트">
-                    <img src="images/three_flo.svg" alt="플로우캣 미어캣 캐릭터 일러스트">
+                    <img src="images/one_flo.svg" alt="플로우캣 미어캣 캐릭터 일러스트 1">
+                    <img src="images/two_flo.svg" alt="플로우캣 미어캣 캐릭터 일러스트 2">
+                    <img src="images/three_flo.svg" alt="플로우캣 미어캣 캐릭터 일러스트 3">
                 </div>
 
             </div>
@@ -436,38 +422,38 @@
             
             <div class="footer-top-row">
                 <div class="footer-logo">
-                    <img src="images/logo_wordmark_white.svg" alt="FlowKat">
+                    <img src="images/logo_wordmark_white.svg" alt="FlowKat 하얀색 로고">
                 </div>
                 <ul class="footer-nav-links">
-                    <li><a href="#">FlowKat Demo</a></li>
-                    <li><a href="https://edu.flowkat.dev">FlowKat Edu</a></li>
-                    <li><a href="#">조달청 디지털서비스몰</a></li>
+                    <li><a href="#" data-link="demo">FlowKat Demo</a></li>
+                    <li><a href="#" data-link="edu">FlowKat Edu</a></li>
+                    <li><a href="#" data-link="g2b">조달청 디지털서비스몰</a></li>
                 </ul>
             </div>
 
             <div class="footer-bottom-row">
                 <div class="footer-company-info">
-                    <span class="company-name">FlowKat</span>
-                    <p class="company-details">
+                    <span class="company-name">FlowKat.dev</span>
+                    <address class="company-details" style="font-style: normal;">
                         대전 대덕구 송촌동 선비마을로6번길 62 2층<br>
                         flowkat@papercraft.dev<br>
                         010 4556 9693
-                    </p>
+                    </address>
                 </div>
                 
                 <div class="footer-sns-box">
                     <div class="sns-icons-group">
                         <a href="https://forum.flowkat.dev/" class="sns-icon-link">
-                            <img src="images/icon_forum.svg" alt="포럼">
+                            <img src="images/icon_forum.svg" alt="공식 포럼 바로가기">
                         </a>
                         <a href="https://tech.flowkat.dev/" class="sns-icon-link">
-                            <img src="images/icon_tech.svg" alt="기술 블로그">
+                            <img src="images/icon_tech.svg" alt="기술 블로그 바로가기">
                         </a>
                         <a href="https://www.instagram.com/flowkat_official/" class="sns-icon-link">
-                            <img src="images/icon_instagram.svg" alt="인스타그램">
+                            <img src="images/icon_instagram.svg" alt="공식 인스타그램 바로가기">
                         </a>
                         <a href="https://www.facebook.com/flowKatofficial/" class="sns-icon-link">
-                            <img src="images/icon_facebook.svg" alt="페이스북">
+                            <img src="images/icon_facebook.svg" alt="공식 페이스북 바로가기">
                         </a>
                     </div>
                     <span class="sns-handle-text">flowkat_official</span>

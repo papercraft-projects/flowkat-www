@@ -9,6 +9,12 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    word-break: keep-all;
+}
+
+a[href^="tel"] {
+    color: inherit;
+    text-decoration: none;
 }
 
 svg {
@@ -19,6 +25,7 @@ svg use {
 }
 
 :root {
+    /* --- 색상 팔레트 토큰 --- */
     --CN-99: #F7F7F8FF;
     --CN-98: #F4F4F5FF;
     --CN-98-10: #F4F4F51A;
@@ -79,6 +86,7 @@ svg use {
     --button-circle-bg: var(--CN-98);
     --card-border-color: var(--CN-90);
 
+    /* --- 타이포그래피 토큰 --- */
     --font-size-52: 3.25rem;         
     --font-size-33: 2.0625rem;       
     --font-size-24: 1.5rem;          
@@ -91,20 +99,29 @@ svg use {
     --font-weight-medium: 500;
     --font-weight-regular: 400;
     --font-weight-light: 300;
+
+    /* 💡 개선: 하드코딩되어 파편화되었던 Z-index 계층 체계화 */
+    --z-base: 1;
+    --z-hero-display: 2;
+    --z-hero-text: 3;
+    --z-wave-top: 10;
+    --z-gnb: 990;
+    --z-header: 1000;
+    --z-hamburger: 1010;
+}
+
+/* 💡 개선: html과 body에 분산되어 있던 중복 가로스크롤 방지 속성 통합 */
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     background-color: var(--pure-white);
     color: var(--CN-20);
-    overflow-x: hidden;
     padding-top: 4rem; 
-}
-
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100vw;
 }
 
 /* ==========================================================================
@@ -135,7 +152,6 @@ html, body {
     font-weight: var(--font-weight-bold);
     line-height: normal;
     margin: 0; 
-    word-break: keep-all;
 }
 
 .section-subtitle {
@@ -146,7 +162,6 @@ html, body {
     font-weight: var(--font-weight-medium);
     line-height: normal;
     margin: 0;
-    word-break: keep-all;
 }
 
 .section-subtitle.type-dark {
@@ -218,7 +233,7 @@ html, body {
 .btn-action.size-lg { max-width: 27.375rem; } 
 
 .btn-action.mod-outline-orange {
-    --btn-border: 0.0625rem solid var(--brand-primary);
+    --btn-border: 0.0625rem solid var(--brand-white);
     --hover-bg: var(--CN-15);
     --hover-border: 0.0625rem solid var(--brand-primary);
     --circle-bg: var(--brand-white); 
@@ -234,7 +249,7 @@ html, body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; 
+    z-index: var(--z-header); /* 💡 개선: 변수 적용 */
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px); 
@@ -294,7 +309,7 @@ html, body {
 .section-hero {
     width: 100%;
     min-height: 100vh; 
-    padding: 10rem 0 10rem 0; 
+    padding: 10rem 0; 
     background-color: var(--pure-white);
     position: relative;
     overflow: hidden;
@@ -313,14 +328,14 @@ html, body {
 
 .deco-wave {
     position: absolute;
-    z-index: 1;
+    z-index: var(--z-base); /* 💡 개선: 변수 적용 */
     pointer-events: none;
     max-width: 100%;
 }
 
-.wave-1 { width: 18.526rem; top: 26.75rem; left: -17.1875rem; z-index: 10; }
+.wave-1 { width: 18.526rem; top: 26.75rem; left: -17.1875rem; z-index: var(--z-wave-top); } /* 💡 개선: 변수 적용 */
 .wave-2 { width: 26.988rem; top: 6.5625rem; right: -14.925rem; }
-.wave-3 { width: 18.526rem; top: 39.5625rem; right: -14.525rem; z-index: 10; }
+.wave-3 { width: 18.526rem; top: 39.5625rem; right: -14.525rem; z-index: var(--z-wave-top); } /* 💡 개선: 변수 적용 */
 
 .hero-title-part {
     display: flex;
@@ -330,7 +345,7 @@ html, body {
     align-items: center;
     gap: 2rem;
     align-self: stretch;
-    z-index: 3;
+    z-index: var(--z-hero-text); /* 💡 개선: 변수 적용 */
 }
 
 .hero-title {
@@ -359,7 +374,7 @@ html, body {
 .hero-display-area {
     position: relative;
     width: 100%;
-    z-index: 2;
+    z-index: var(--z-hero-display); /* 💡 개선: 변수 적용 */
 }
 
 .dashboard-window {
@@ -387,6 +402,10 @@ html, body {
     align-items: center;
     gap: 0.625rem;
     border-left: 0.0625rem solid var(--brand-black); 
+    background: transparent;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
     cursor: pointer;
 }
 
@@ -403,7 +422,7 @@ html, body {
     width: 21.656rem;         
     left: 90%;        
     top: 60%;         
-    z-index: 10;
+    z-index: var(--z-wave-top); /* 💡 개선: 변수 적용 */
 }
 
 /* ==========================================================================
@@ -555,9 +574,15 @@ html, body {
     border: 0.1875rem solid var(--CN-40); 
     background-color: transparent;
     transition: background-color 0.2s ease, border-color 0.2s ease;
+    
+    /* 💡 평상시 테두리 깜빡임 애니메이션 (1.5초 주기 무한 반복) */
+    animation: border-flash 1.5s infinite ease-in-out;
 }
 
-.portal-search-trigger-box:hover .portal-search-mockup {
+/* 💡 마우스를 올리거나 클릭해서 열렸을(active) 때는 깜빡임을 멈추고 주황색 고정 */
+.portal-search-trigger-box:hover .portal-search-mockup,
+.portal-search-trigger-box.active .portal-search-mockup {
+    animation: none; 
     border-color: var(--brand-primary);
     background-color: var(--CN-5);
 }
@@ -701,6 +726,41 @@ html, body {
 }
 
 /* ==========================================================================
+   조달청 검색창 타이핑 & 테두리 깜빡임 통합 모션
+   ========================================================================== */
+.typing-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 0.15rem;           
+    height: 1.4rem;           
+    background-color: var(--brand-white); 
+    margin-left: 0.3rem;      
+    animation: cursor-blink 0.8s step-end infinite; 
+}
+
+/* [애니메이션] 커서 깜빡임 */
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* [애니메이션] 테두리 회색 <-> 주황색 은은한 플래시 */
+@keyframes border-flash {
+    0%, 100% {
+        border-color: var(--CN-40);
+        box-shadow: none;
+    }
+    50% {
+        border-color: var(--brand-primary);
+        box-shadow: 0 0 12px rgba(255, 78, 15, 0.2); /* 주황색일 때 은은한 불빛 효과 */
+    }
+}
+
+/* ==========================================================================
    6. 파트너사 로고 및 고객 후기 영역 (section-partners)
    ========================================================================== */
 .section-partners {
@@ -779,7 +839,6 @@ html, body {
     line-height: 1.5;           
     letter-spacing: 0.0086rem;  
     flex: 1 0 0;
-    word-break: keep-all;
 }
 
 /* ==========================================================================
@@ -906,8 +965,7 @@ html, body {
     font-size: var(--font-size-24); 
     font-weight: var(--font-weight-semibold); 
     letter-spacing: 0.0086rem;  
-    line-height: 1; 
-    transform: translateY(2px);
+    line-height: normal;
     white-space: nowrap;
 }
 
@@ -925,7 +983,6 @@ html, body {
     font-weight: var(--font-weight-light); 
     letter-spacing: 0.0064rem;  
     line-height: 1.4;
-    word-break: keep-all;
 }
 
 .btn-variant-card.active {
@@ -937,9 +994,8 @@ html, body {
 .btn-variant-card.active .icon-custom { 
     display: inline-block; 
     width: auto;
-    height: 1.5rem;        /* 💡 눌렀을 때(active) 커스텀 아이콘 크기만 1.5rem으로 확대 */
+    height: 1.5rem;
     max-width: 1.5rem;
-    
 }
 .btn-variant-card.active .variant-body {
     max-height: 15rem;
@@ -1018,21 +1074,19 @@ html, body {
     color: var(--brand-primary) !important;
 }
 
-@media screen and (min-width: 769px) {
+/* 💡 개선: max-width: 768px 모바일 대응과 완벽 매칭을 위해 사각지대 차단 최적화 (768.02px로 소수점 가드 적용) */
+@media screen and (min-width: 768.02px) {
     .architecture-cards-panel {
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 💡 하단 4개 배열에 맞춰 그리드를 4열로 변경 */
+        grid-template-columns: repeat(4, 1fr); 
         grid-template-rows: auto auto;          
         gap: 1.25rem;
-        
-        /* 💡 [요청사항] 전체 가로폭을 42rem으로 제한하여 하단 4개 크기를 줄이고 상단 폭도 함께 좁게 조정 */
         width: 100%;
         max-width: 35rem;                      
-        margin-left: auto;                     /* 회색 버튼 사이드바와 균형을 맞추기 위해 우측 정렬 */
+        margin-left: auto;                     
     }
 
     .arch-infographic-card {
-        /* 💡 활성화되지 않은 4개 카드는 자동으로 2행(하단)의 4개 칸에 셔플 없이 순서대로 안착 */
         grid-row: 2;         
         grid-column: auto;   
         aspect-ratio: 1 / 1;  
@@ -1056,11 +1110,8 @@ html, body {
     /* 활성화된 메인 대시보드 카드 */
     .arch-infographic-card.active {
         grid-row: 1;          
-        grid-column: 1 / 5;   /* 💡 [요청사항] 1열부터 4열까지 채워 하단 4개 카드의 전체 가로폭과 딱 맞게 일치시킴 */
-        
-        /* 💡 가로폭이 좁아진 것에 맞추어 황금 비율의 직사각형(4:2.1)으로 세로 높이 최적화 */
+        grid-column: 1 / 5;   
         aspect-ratio: 4 / 2.1; 
-        
         border-color: var(--card-border-color); 
         transform: none;      
         cursor: default;                 
@@ -1074,7 +1125,7 @@ html, body {
     }
 }
 
-/* 부드러운 페이드업 애니메이션 (기존 유지) */
+/* 부드러운 페이드업 애니메이션 */
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -1283,7 +1334,7 @@ html, body {
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 1010; 
+    z-index: var(--z-hamburger); /* 💡 개선: 변수 적용 */
 }
 
 .btn-hamburger span {
@@ -1298,7 +1349,6 @@ html, body {
    8. 반응형 미디어 쿼리 (1024px 태블릿/노트북 구간 최적화)
    ========================================================================== */
 @media screen and (max-width: 1024px) {
-    /* 기존 위아래 흐름 전환 유지 */
     .main-features-container, .sub-features-container {
         flex-direction: column;
         gap: 2.5rem;
@@ -1327,15 +1377,13 @@ html, body {
         width: 100%;
     }
 
-    /* 1. 히어로 깃발 미어캣 우측 잘림 방지 (화면 안쪽 배치) */
     .char-meerkat-flag {
         left: auto;
-        right: 0;            /* 화면 맨 우측 경계선에 밀착 */
-        width: 16rem;        /* 1024px 해상도에 맞게 크기 축소 */
-        top: 65%;            /* 대시보드 하단에 자연스럽게 걸치도록 조정 */
+        right: 0;            
+        width: 16rem;        
+        top: 65%;            
     }
 
-    /* 2. 브랜드 스토리 세로형 로고 가운데 정렬 */
     .story-formula-container {
         flex-direction: column;
         align-items: center; 
@@ -1346,13 +1394,12 @@ html, body {
     .formula-card.card-result {
         margin: 0 auto;     
         width: 100%;
-        max-width: 20rem;   /* 💡 로고가 너무 답답하지 않게 가로 상자 크기를 조금 더 확보 */
+        max-width: 20rem;   
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    /* 로고 이미지의 부모 박스 정렬 최적화 */
     .graphic-combined-logo {
         width: 100%;
         display: flex;
@@ -1360,21 +1407,19 @@ html, body {
         align-items: center;
     }
     
-    /* 💡 [핵심] 이미지가 상자 너비(20rem)를 넘지 못하도록 가두고 비율에 맞춰 축소 */
     .graphic-combined-logo img {
         width: 100%;
-        max-width: 100%;   /* 💡 글자가 주황색 상자 바깥으로 탈출하는 현상을 완벽히 차단 */
+        max-width: 100%;   
         height: auto;
         display: block;
         margin: 0 auto;
     }
 
-    /* 3. 파트너 파트 로고 3열 2행 (3칸씩 2줄) 격자 배열 */
     .partner-logos-bar {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 정확히 3열 배치 */
-        gap: 2.5rem 2rem;                       /* 상하 2.5rem, 좌우 2rem 여백 */
-        justify-items: center;                  /* 로고 이미지들 개별 가운데 정렬 */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 2.5rem 2rem;                       
+        justify-items: left;                  
         width: 100%;
     }
     .partner-logos-bar img {
@@ -1382,12 +1427,16 @@ html, body {
         object-fit: contain;
     }
 
-    /* 4. 그레이버튼 파트 인포그래픽 패널 가운데 정렬 (우측 쏠림 복구) */
     .architecture-cards-panel {
         width: 100%;
-        margin: 0 auto;      /* 💡 데스크톱 전용 우측 정렬(margin-left: auto)을 취소하고 정중앙 정렬 */
+        margin: 0 auto;      
+    }
+    .product-info-spec-side {
+        max-width: 100%; 
+        border-radius: 1.5rem; /* (꿀팁) 단독으로 떨어졌을 땐 네 모서리를 모두 둥글게 깎아주면 훨씬 예쁩니다! */
     }
 }
+
 /* ==========================================================================
    8. 반응형 미디어 쿼리 - 모바일 전용 모듈 (768px 이하)
    ========================================================================== */
@@ -1403,7 +1452,7 @@ html, body {
 
     body.menu-open { overflow: hidden; touch-action: none; }
     body.menu-open .site-header { background-color: var(--brand-black); backdrop-filter: none; -webkit-backdrop-filter: none; }
-    .logo { position: relative; z-index: 1010; }
+    .logo { z-index: var(--z-hamburger); } /* 💡 개선: 변수 적용 */
     
     .logo-split { display: flex !important; }
     body.menu-open .logo-default { display: none; }
@@ -1419,29 +1468,81 @@ html, body {
         position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100dvh; 
         background-color: var(--brand-black); flex-direction: column; justify-content: center; 
         align-items: center; gap: 3rem; transform: translateY(-100%);
-        opacity: 0; visibility: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 990; 
+        opacity: 0; visibility: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: var(--z-gnb); /* 💡 개선: 변수 적용 */
     }
     .gnb.active { transform: translateY(0); opacity: 1; visibility: visible; }
     .gnb a { color: var(--brand-white); font-size: 1.5rem; font-weight: var(--font-weight-bold); }
     .gnb a .icon-arrow { width: 1.5rem; height: 1.5rem; }
     .gnb a:hover { color: var(--brand-primary); }
 
-    /* [3] 히어로 깃발 모바일 정중앙 안착 */
     .deco-wave { display: none; }
     .char-meerkat-flag {
         display: block;
         position: absolute; 
-        width: 35%;             
-        left: 60%;   
-        right: auto; 
+        width: 40%;             
+        left: 40%;  
+        transform: none; 
         bottom: -12rem;          
         top: auto; 
-        transform: translateX(-50%); 
         z-index: 10;
     }
-    .hero-display-area { margin-bottom: 8rem; }
 
-    /* [2] 브랜드 스토리 모바일 세로 일렬 센터 정렬 */
+    .section-hero {
+
+    padding: 6rem 0;
+
+}
+    .hero-word-logo {
+        width: 80%;       /* 화면 꽉 차지 않게 80%로 축소 */
+        margin-top: 1rem; /* 헤더에 가려지지 않게 여백 추가 */
+    }
+
+    /* 2. 대시보드 화면 좌우 여백 무시하고 꽉 차게 키우기 */
+    .hero-display-area { 
+        width: calc(100% + 3rem);  /* 부모의 좌우 여백(1.5rem * 2)만큼 강제로 넓힘 */
+        margin-left: -1.5rem;      /* 왼쪽 끝으로 밀착 */
+        margin-right: -1.5rem;     /* 오른쪽 끝으로 밀착 */
+        margin-bottom: 8rem; 
+    }
+
+    /* 모바일에서 화면이 꽉 차므로 테두리 모서리 둥글기를 없애주면 더 자연스럽습니다 */
+    .dashboard-window {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .btn-action {
+        height: 3.5rem; 
+        padding: 0.5rem 0.75rem 0.5rem 1.5rem; 
+    }
+
+    /* 💡 우선순위를 이기기 위해 .size-md와 .size-lg를 직접 지목해서 덮어씌웁니다 */
+   .btn-action.size-md {
+        max-width: 14rem; 
+    }
+
+    /* 💡 조달청 버튼(긴 글자)은 글씨가 안 깨지게 너비 충분히 확보 */
+    .btn-action.size-lg {
+        max-width: 20rem; 
+    }
+
+    .btn-action .btn-text {
+        font-size: 1.1rem; 
+    }
+
+    .btn-action .btn-circle {
+        width: 2.5rem; 
+        height: 2.5rem;
+    }
+
+    .btn-action .btn-circle svg {
+        width: 1.5rem; 
+    }
+    .hero-title-part .btn-action{
+        margin-top: 2rem;
+    }
+
     .story-formula-container {
         display: flex;
         flex-direction: column;
@@ -1462,8 +1563,8 @@ html, body {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 6rem;
-        height: 6rem;
+        width: 9rem;
+        height: 9rem;
         aspect-ratio: 1 / 1;
         margin: 0 auto;
     }
@@ -1486,19 +1587,17 @@ html, body {
     }
     .graphic-combined-logo { width: 100%; display: flex; justify-content: center; align-items: center; }
     .graphic-combined-logo img { width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto; }
-    .formula-text { font-size: 1.1rem; min-height: auto; }
+    .formula-text { font-size: 1.5rem; min-height: auto; }
 
-    /* [6] 파트너사 로고 모바일 2열 정렬 */
     .partner-logos-bar {
         display: grid; 
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem 1.5rem; 
-        justify-items: center; 
+        justify-items: start; 
         width: 100%;
     }
-    .partner-logos-bar img { width: 100%; max-height: 2.5rem; object-fit: contain; }
+    .partner-logos-bar img { width: 100%; max-height: 2.5rem; object-fit: contain; object-position: left;}
 
-    /* [7-1] 블랙 버튼 모바일 샌드위치 아코디언 설정 */
     .features-display-box { display: none; }
     .mobile-feature-img-box {
         display: none; 
@@ -1510,7 +1609,6 @@ html, body {
     .mobile-feature-img-box.active { display: block; }
     .mobile-feature-img-box img { width: 100%; display: block; }
 
-    /* [7-2] 그레이 버튼 모바일 1:1 정사각형 고정 (Clean버전 - !important 제거) */
     .architecture-cards-panel {
         width: 100%;
         max-width: 26rem; 
@@ -1535,20 +1633,19 @@ html, body {
     }
     .arch-infographic-card.active img { width: 80%; height: auto; object-fit: contain; }
 
-    /* 기타 푸터 및 포털 밸런스 조정 */
     .cta-image-row { height: auto; width: 100%; padding-top: 3rem; }
     .cta-image-row img { width: 31%; height: auto; }
     .portal-search-header { flex-direction: column; align-items: center; }
     .spec-table-rows { flex-direction: column; }
-    .spec-item-row { flex-direction: column; gap: 0.25rem; border-bottom: 1px solid var(--CN-30); padding-bottom: 1rem; }
-    .spec-label { width: 100%; font-weight: bold; }
+    .spec-item-row { flex-direction: column; gap: 0.25rem; padding-bottom: 1rem; }
+    .spec-label { width: 100%;}
     .footer-top-row, .footer-bottom-row { flex-direction: column; align-items: start; text-align: left; gap: 2rem; padding-bottom: 3rem; }
     .footer-nav-links, .footer-sns-box { align-items: start; }
 }
 
 /* ==========================================================================
-   9. 데스크톱 보정 전용 미디어 쿼리 (769px 이상 독립 배치)
+   9. 데스크톱 보정 전용 미디어 쿼리 (768.02px 이상 독립 배치)
    ========================================================================== */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768.02px) {
     .mobile-feature-img-box { display: none; }
 }
