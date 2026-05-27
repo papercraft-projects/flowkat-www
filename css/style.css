@@ -1433,7 +1433,7 @@ body {
     }
     .product-info-spec-side {
         max-width: 100%; 
-        border-radius: 1.5rem; /* (꿀팁) 단독으로 떨어졌을 땐 네 모서리를 모두 둥글게 깎아주면 훨씬 예쁩니다! */
+        border-radius: 1.5rem; 
     }
 }
 
