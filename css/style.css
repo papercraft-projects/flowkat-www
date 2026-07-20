@@ -1,6 +1,10 @@
 /* ==========================================================================
    0. 디자인 시스템 변수 등록 (:root) & 전체 초기화 (Reset)
    ========================================================================== */
+
+
+   @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
 html {
     font-size: 16px; 
 }
@@ -24,7 +28,6 @@ svg use {
     pointer-events: none;
 }
 
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 :root {
     /* --- 색상 팔레트 토큰 --- */
