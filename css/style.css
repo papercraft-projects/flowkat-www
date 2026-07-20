@@ -24,6 +24,8 @@ svg use {
     pointer-events: none;
 }
 
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
 :root {
     /* --- 색상 팔레트 토큰 --- */
     --CN-99: #F7F7F8FF;
@@ -790,10 +792,10 @@ body {
 
 .partner-logos-bar {
     display: grid;
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 2.5rem 2rem;                       
-        width: 100%;
-        justify-items: left; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 2.5rem 2rem;                       
+    width: 100%;
+    justify-items: left; 
 
 }
 
