@@ -1,9 +1,78 @@
 /* ==========================================================================
    0. 디자인 시스템 변수 등록 (:root) & 전체 초기화 (Reset)
    ========================================================================== */
+/* 100: Thin */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 100;
+    font-style: normal;
+    src: url('../fonts/Pretendard-Thin.woff2') format('woff2');
+}
 
+/* 200: ExtraLight */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 200;
+    font-style: normal;
+    src: url('../fonts/Pretendard-ExtraLight.woff2') format('woff2');
+}
 
-   @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+/* 300: Light */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../fonts/Pretendard-Light.woff2') format('woff2');
+}
+
+/* 400: Regular (기본) */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Pretendard-Regular.woff2') format('woff2');
+}
+
+/* 500: Medium */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../fonts/Pretendard-Medium.woff2') format('woff2');
+}
+
+/* 600: SemiBold */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../fonts/Pretendard-SemiBold.woff2') format('woff2');
+}
+
+/* 700: Bold */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/Pretendard-Bold.woff2') format('woff2');
+}
+
+/* 800: ExtraBold */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 800;
+    font-style: normal;
+    src: url('../fonts/Pretendard-ExtraBold.woff2') format('woff2');
+}
+
+/* 900: Black */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 900;
+    font-style: normal;
+    src: url('../fonts/Pretendard-Black.woff2') format('woff2');
+}
+
 
 html {
     font-size: 16px; 
