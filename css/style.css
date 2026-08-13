@@ -868,7 +868,7 @@ body {
     gap: 2.5rem 2rem;                       
     width: 100%;
     justify-items: left; 
-
+    align-items: center;
 }
 
 
@@ -877,6 +877,11 @@ body {
     height: 2.5rem;             
     object-fit: contain;
 }
+
+.partner-logos-bar .logo-iitp {
+    height: 1.8rem; /* PC 크기 조절 */
+}
+
 
 .testimonial-grid {
     display: grid;
@@ -1673,7 +1678,9 @@ body {
         width: 100%;
     }
     .partner-logos-bar img { width: 100%; max-height: 2.5rem; object-fit: contain; object-position: left;}
-
+    .partner-logos-bar .logo-iitp {
+        max-height: 1.8rem; /* 모바일 크기 조절 */
+    }
     .features-display-box { display: none; }
     .mobile-feature-img-box {
         display: none; 
