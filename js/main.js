@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const SITE_URLS = {
         demo: 'https://demo.flowkat.dev/ko/auth/signin', // 데모 링크가 확정되면 여기에만 적으면 됩니다 (예: 'https://demo.flowkat.dev')
         edu: 'https://edu.flowkat.dev',
+        brand: 'https://brand.flowkat.dev/character/',
         g2b: 'https://digitalmall.g2b.go.kr/link/GDSF001_01/?ctrtItemMngNo=R26TA01405587000000001',
         brochure: 'images/flowkat_brochure.pdf'
     };

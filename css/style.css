@@ -1519,22 +1519,22 @@ body {
 }
 
 /* ==========================================================================
-   8. 반응형 미디어 쿼리 - 모바일 전용 모듈 (768px 이하)
+   8. 반응형 미디어 쿼리 - 상단 메뉴 간격 축소 (881px ~ 960px)
+   메뉴 4개가 로고와 붙지 않고 한 줄에 들어가도록 간격만 40px → 24px
    ========================================================================== */
-@media screen and (max-width: 768px) {
-    html { font-size: 14px; }
-    :root {
-        --font-size-52: 2.25rem; 
-        --font-size-33: 1.75rem; 
-        --font-size-28: 1.375rem; 
-        --font-size-24: 1.15rem; 
-        --font-size-18: 1rem;    
-    }
+@media screen and (min-width: 880.02px) and (max-width: 960px) {
+    .gnb { gap: 1.5rem; }
+}
 
+/* ==========================================================================
+   8. 반응형 미디어 쿼리 - 햄버거 메뉴 (880px 이하)
+   간격을 줄여도 메뉴 4개가 한 줄에 들어가지 않는 폭부터 햄버거 메뉴로 전환
+   ========================================================================== */
+@media screen and (max-width: 880px) {
     body.menu-open { overflow: hidden; touch-action: none; }
     body.menu-open .site-header { background-color: var(--brand-black); backdrop-filter: none; -webkit-backdrop-filter: none; }
     .logo { z-index: var(--z-hamburger); } /* 💡 개선: 변수 적용 */
-    
+
     .logo-split { display: flex !important; }
     body.menu-open .logo-default { display: none; }
     body.menu-open .logo-split .logo-text { filter: brightness(0) invert(1); }
@@ -1546,8 +1546,8 @@ body {
     .btn-hamburger.active span:nth-child(3) { transform: translateY(-0.65rem) rotate(-45deg); }
 
     .gnb {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100dvh; 
-        background-color: var(--brand-black); flex-direction: column; justify-content: center; 
+        position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100dvh;
+        background-color: var(--brand-black); flex-direction: column; justify-content: center;
         align-items: center; gap: 3rem; transform: translateY(-100%);
         opacity: 0; visibility: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: var(--z-gnb); /* 💡 개선: 변수 적용 */
     }
@@ -1555,6 +1555,20 @@ body {
     .gnb a { color: var(--brand-white); font-size: 1.5rem; font-weight: var(--font-weight-bold); }
     .gnb a .icon-arrow { width: 1.5rem; height: 1.5rem; }
     .gnb a:hover { color: var(--brand-primary); }
+}
+
+/* ==========================================================================
+   8. 반응형 미디어 쿼리 - 모바일 전용 모듈 (768px 이하)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    html { font-size: 14px; }
+    :root {
+        --font-size-52: 2.25rem; 
+        --font-size-33: 1.75rem; 
+        --font-size-28: 1.375rem; 
+        --font-size-24: 1.15rem; 
+        --font-size-18: 1rem;
+    }
 
     .deco-wave { display: none; }
     .char-meerkat-flag {
